@@ -26,9 +26,9 @@ class TaskAdapter(private val detail: (Task) -> Unit) :
         private val detail: (Task) -> Unit
     ) : RecyclerView.ViewHolder(itemTaskBinding.root) {
         fun bind(task: Task) {
-            itemTaskBinding.textViewTitle.text = task.title
-            itemTaskBinding.textViewStatus.text = task.statusTask.name
-            itemTaskBinding.textViewDescription.text = task.description
+            itemTaskBinding.tvTitle.text = task.title
+            itemTaskBinding.tvStatus.text = task.statusTask.name
+            itemTaskBinding.tvDescription.text = task.description
             itemTaskBinding.root.setOnClickListener {
                 detail(task)
             }
