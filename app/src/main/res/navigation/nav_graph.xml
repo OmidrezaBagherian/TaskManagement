@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_main"
+        android:id="@+id/mainFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.main.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        tools:layout="@layout/fragment_task"
+        android:id="@+id/taskFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.task.TaskFragment"
+        android:label="TaskFragment" />
+    <fragment
+        tools:layout="@layout/fragment_doing"
+        android:id="@+id/doingFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.doing.DoingFragment"
+        android:label="DoingFragment" />
+    <fragment
+        tools:layout="@layout/fragment_done"
+        android:id="@+id/doneFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.done.DoneFragment"
+        android:label="DoneFragment" />
+</navigation>
