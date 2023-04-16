@@ -1,0 +1,30 @@
+package com.omidrezabagherian.taskmanagement.ui.doing
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.omidrezabagherian.taskmanagement.data.TaskManagementRepository
+import com.omidrezabagherian.taskmanagement.domian.models.StatusTask
+import com.omidrezabagherian.taskmanagement.domian.models.Task
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+
+@HiltViewModel
+class DoingViewModel @Inject constructor(private val repository: TaskManagementRepository) :
+    ViewModel() {
+
+    private val _doingList = MutableStateFlow<List<Task>>(emptyList())
+    val doingList: StateFlow<List<Task>> = _doingList.asStateFlow()
+
+    fun setList(statusTask: StatusTask) {
+        viewModelScope.launch {
+            repository.getTaskByStatus(statusTask).collect { list ->
+                _doingList.emit(list)
+            }
+        }
+    }
+}
