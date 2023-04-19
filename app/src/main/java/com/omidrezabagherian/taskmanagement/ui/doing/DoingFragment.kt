@@ -33,7 +33,7 @@ class DoingFragment : Fragment(R.layout.fragment_doing) {
     }
 
     private fun setupRecyclerView() {
-        viewModel.setList(StatusTask.DONE)
+        viewModel.setList(StatusTask.DOING)
 
         adapter = DoingAdapter {
             Toast.makeText(requireContext(), it.title, Toast.LENGTH_SHORT).show()

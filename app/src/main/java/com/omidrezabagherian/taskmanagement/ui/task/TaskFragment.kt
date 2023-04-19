@@ -34,7 +34,7 @@ class TaskFragment : Fragment(R.layout.fragment_task) {
     }
 
     private fun setupRecyclerView() {
-        viewModel.setList(StatusTask.DONE)
+        viewModel.setList(StatusTask.TASK)
 
         adapter = TaskAdapter {
             Toast.makeText(requireContext(), it.title, Toast.LENGTH_SHORT).show()
