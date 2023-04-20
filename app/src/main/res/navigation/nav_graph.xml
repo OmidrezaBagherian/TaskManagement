@@ -32,7 +32,7 @@
     <fragment
         tools:layout="@layout/fragment_insert"
         android:id="@+id/insertFragment"
-        android:name="com.omidrezabagherian.taskmanagement.ui.add.InsertFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.insert.InsertFragment"
         android:label="InsertFragment" >
         <action
             android:id="@+id/action_insertFragment_to_mainFragment"

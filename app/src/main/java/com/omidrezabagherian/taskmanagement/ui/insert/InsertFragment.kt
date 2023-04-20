@@ -1,4 +1,4 @@
-package com.omidrezabagherian.taskmanagement.ui.add
+package com.omidrezabagherian.taskmanagement.ui.insert
 
 import android.os.Bundle
 import android.view.View
