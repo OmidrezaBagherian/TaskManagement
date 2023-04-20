@@ -9,7 +9,11 @@
         tools:layout="@layout/fragment_main"
         android:id="@+id/mainFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_insertFragment"
+            app:destination="@id/insertFragment" />
+    </fragment>
     <fragment
         tools:layout="@layout/fragment_task"
         android:id="@+id/taskFragment"
@@ -25,4 +29,14 @@
         android:id="@+id/doneFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.done.DoneFragment"
         android:label="DoneFragment" />
+    <fragment
+        tools:layout="@layout/fragment_insert"
+        android:id="@+id/insertFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.add.InsertFragment"
+        android:label="InsertFragment" >
+        <action
+            android:id="@+id/action_insertFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
 </navigation>

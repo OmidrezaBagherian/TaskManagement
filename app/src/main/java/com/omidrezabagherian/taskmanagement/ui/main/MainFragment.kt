@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import com.omidrezabagherian.taskmanagement.R
@@ -24,6 +25,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private lateinit var binding: FragmentMainBinding
     private val mainViewModel: MainViewModel by viewModels()
+    private val navController by lazy {
+        findNavController()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -50,13 +54,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private fun setupFabInsert() {
         binding.fabInsert.setOnClickListener {
-            Snackbar.make(requireView(), "Insert Task", Snackbar.LENGTH_SHORT).show()
-            viewLifecycleOwner.lifecycleScope.launch {
-                mainViewModel.insertTask(
-                    Task(0, "Test", "Test", StatusTask.TASK)
-                )
-            }
-
+            navController.navigate(MainFragmentDirections.actionMainFragmentToInsertFragment())
         }
     }
 }
