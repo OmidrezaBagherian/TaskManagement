@@ -17,4 +17,12 @@ class TaskManagementRepository(private val localDataSource: LocalDataSource) {
     suspend fun insertTask(task: Task) {
         localDataSource.insertTask(task)
     }
+
+    suspend fun deleteTask(task: Task) {
+        localDataSource.deleteTask(task)
+    }
+
+    suspend fun updateTask(task: Task) {
+        localDataSource.updateTask(task)
+    }
 }

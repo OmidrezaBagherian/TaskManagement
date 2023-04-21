@@ -17,4 +17,12 @@ class LocalDataSource @Inject constructor(private val taskManagementDao: TaskMan
     suspend fun insertTask(task: Task) {
         taskManagementDao.insertTask(task)
     }
+
+    suspend fun deleteTask(task: Task) {
+        taskManagementDao.deleteTask(task)
+    }
+
+    suspend fun updateTask(task: Task) {
+        taskManagementDao.updateTask(task)
+    }
 }

@@ -1,9 +1,6 @@
 package com.omidrezabagherian.taskmanagement.data.local
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.omidrezabagherian.taskmanagement.domian.models.TaskStatus
 import com.omidrezabagherian.taskmanagement.domian.models.Task
 import kotlinx.coroutines.flow.Flow
@@ -17,8 +14,14 @@ interface TaskManagementDao {
     fun getTaskByStatus(taskStatus: TaskStatus): Flow<List<Task>>
 
     @Query("SELECT * FROM task_db WHERE id == :id")
-    fun getTaskById(id:Int):Flow<Task>
+    fun getTaskById(id: Int): Flow<Task>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertTask(task: Task)
+
+    @Delete
+    suspend fun deleteTask(task: Task)
+
+    @Update
+    suspend fun updateTask(task: Task)
 }
