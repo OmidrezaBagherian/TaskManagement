@@ -47,8 +47,28 @@
         <argument
             android:name="task"
             app:argType="com.omidrezabagherian.taskmanagement.domian.models.Task" />
+        <action
+            android:id="@+id/action_detailFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <action
         android:id="@+id/action_global_detailFragment"
         app:destination="@id/detailFragment" />
+    <fragment
+        tools:layout="@layout/fragment_update"
+        android:id="@+id/updateFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.update.UpdateFragment"
+        android:label="UpdateFragment" >
+        <action
+            android:id="@+id/action_updateFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment" />
+        <argument
+            android:name="task"
+            app:argType="com.omidrezabagherian.taskmanagement.domian.models.Task" />
+    </fragment>
 </navigation>
