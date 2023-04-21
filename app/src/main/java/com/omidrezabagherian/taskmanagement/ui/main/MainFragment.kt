@@ -4,21 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 import com.omidrezabagherian.taskmanagement.R
-import com.omidrezabagherian.taskmanagement.databinding.ActivityMainBinding
 import com.omidrezabagherian.taskmanagement.databinding.FragmentMainBinding
-import com.omidrezabagherian.taskmanagement.domian.models.StatusTask
-import com.omidrezabagherian.taskmanagement.domian.models.Task
 import com.omidrezabagherian.taskmanagement.ui.ViewPagerAdapter
 import com.omidrezabagherian.taskmanagement.util.ConstValues
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class MainFragment : Fragment(R.layout.fragment_main) {

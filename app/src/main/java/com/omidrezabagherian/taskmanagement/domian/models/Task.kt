@@ -13,5 +13,5 @@ data class Task(
     @ColumnInfo
     val description: String,
     @ColumnInfo
-    val statusTask: StatusTask
+    val taskStatus: TaskStatus
 )

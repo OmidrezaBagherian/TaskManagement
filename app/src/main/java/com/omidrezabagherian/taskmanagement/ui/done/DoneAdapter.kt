@@ -27,7 +27,7 @@ class DoneAdapter(private val detail: (Task) -> Unit) :
     ) : RecyclerView.ViewHolder(itemTaskBinding.root) {
         fun bind(task: Task) {
             itemTaskBinding.tvTitle.text = task.title
-            itemTaskBinding.tvStatus.text = task.statusTask.name
+            itemTaskBinding.tvStatus.text = task.taskStatus.name
             itemTaskBinding.tvDescription.text = task.description
             itemTaskBinding.root.setOnClickListener {
                 detail(task)

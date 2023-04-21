@@ -1,5 +1,5 @@
 package com.omidrezabagherian.taskmanagement.domian.models
 
-enum class StatusTask {
-    TASK, DOING, DONE
+enum class TaskStatus {
+    TASK, DOING, DONE, NONE
 }

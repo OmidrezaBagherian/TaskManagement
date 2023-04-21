@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.omidrezabagherian.taskmanagement.R
 import com.omidrezabagherian.taskmanagement.databinding.FragmentDoingBinding
-import com.omidrezabagherian.taskmanagement.domian.models.StatusTask
+import com.omidrezabagherian.taskmanagement.domian.models.TaskStatus
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -33,7 +33,7 @@ class DoingFragment : Fragment(R.layout.fragment_doing) {
     }
 
     private fun setupRecyclerView() {
-        viewModel.setList(StatusTask.DOING)
+        viewModel.setList(TaskStatus.DOING)
 
         adapter = DoingAdapter {
             Toast.makeText(requireContext(), it.title, Toast.LENGTH_SHORT).show()
