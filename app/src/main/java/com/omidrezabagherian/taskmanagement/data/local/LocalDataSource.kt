@@ -12,6 +12,8 @@ class LocalDataSource @Inject constructor(private val taskManagementDao: TaskMan
     fun getTaskByStatus(taskStatus: TaskStatus): Flow<List<Task>> =
         taskManagementDao.getTaskByStatus(taskStatus)
 
+    fun getTaskById(id: Int): Flow<Task> = taskManagementDao.getTaskById(id)
+
     suspend fun insertTask(task: Task) {
         taskManagementDao.insertTask(task)
     }

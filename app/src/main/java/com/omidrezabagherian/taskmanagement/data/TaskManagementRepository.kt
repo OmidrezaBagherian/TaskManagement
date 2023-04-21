@@ -12,6 +12,8 @@ class TaskManagementRepository(private val localDataSource: LocalDataSource) {
     fun getTaskByStatus(taskStatus: TaskStatus): Flow<List<Task>> =
         localDataSource.getTaskByStatus(taskStatus)
 
+    fun getTaskById(id: Int): Flow<Task> = localDataSource.getTaskById(id)
+
     suspend fun insertTask(task: Task) {
         localDataSource.insertTask(task)
     }
