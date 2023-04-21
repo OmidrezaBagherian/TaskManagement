@@ -3,6 +3,7 @@ package com.omidrezabagherian.taskmanagement.domian.models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "task_db")
 data class Task(
@@ -14,4 +15,4 @@ data class Task(
     val description: String,
     @ColumnInfo
     val taskStatus: TaskStatus
-)
+) : Serializable

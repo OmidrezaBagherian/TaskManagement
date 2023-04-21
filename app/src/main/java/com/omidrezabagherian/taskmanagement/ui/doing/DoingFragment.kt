@@ -8,8 +8,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.omidrezabagherian.taskmanagement.R
 import com.omidrezabagherian.taskmanagement.databinding.FragmentDoingBinding
+import com.omidrezabagherian.taskmanagement.domian.models.Task
 import com.omidrezabagherian.taskmanagement.domian.models.TaskStatus
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -19,6 +21,9 @@ class DoingFragment : Fragment(R.layout.fragment_doing) {
     private lateinit var binding: FragmentDoingBinding
     private lateinit var adapter: DoingAdapter
     private val viewModel: DoingViewModel by viewModels()
+    private val navController by lazy {
+        findNavController()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,11 +37,15 @@ class DoingFragment : Fragment(R.layout.fragment_doing) {
         setupRecyclerView()
     }
 
+    private fun navigateToDetail(task: Task) {
+        navController.navigate(DoingFragmentDirections.actionGlobalDetailFragment(task))
+    }
+
     private fun setupRecyclerView() {
         viewModel.setList(TaskStatus.DOING)
 
-        adapter = DoingAdapter {
-            Toast.makeText(requireContext(), it.title, Toast.LENGTH_SHORT).show()
+        adapter = DoingAdapter { task ->
+            navigateToDetail(task)
         }
 
         binding.rvDoing.adapter = adapter

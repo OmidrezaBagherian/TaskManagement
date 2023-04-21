@@ -6,37 +6,49 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
-        tools:layout="@layout/fragment_main"
         android:id="@+id/mainFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.main.MainFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_insertFragment"
             app:destination="@id/insertFragment" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_task"
         android:id="@+id/taskFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.task.TaskFragment"
-        android:label="TaskFragment" />
+        android:label="TaskFragment"
+        tools:layout="@layout/fragment_task" />
     <fragment
-        tools:layout="@layout/fragment_doing"
         android:id="@+id/doingFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.doing.DoingFragment"
-        android:label="DoingFragment" />
+        android:label="DoingFragment"
+        tools:layout="@layout/fragment_doing" />
     <fragment
-        tools:layout="@layout/fragment_done"
         android:id="@+id/doneFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.done.DoneFragment"
-        android:label="DoneFragment" />
+        android:label="DoneFragment"
+        tools:layout="@layout/fragment_done" />
     <fragment
-        tools:layout="@layout/fragment_insert"
         android:id="@+id/insertFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.insert.InsertFragment"
-        android:label="InsertFragment" >
+        android:label="InsertFragment"
+        tools:layout="@layout/fragment_insert">
         <action
             android:id="@+id/action_insertFragment_to_mainFragment"
             app:destination="@id/mainFragment"
             app:popUpTo="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="task"
+            app:argType="com.omidrezabagherian.taskmanagement.domian.models.Task" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_detailFragment"
+        app:destination="@id/detailFragment" />
 </navigation>
