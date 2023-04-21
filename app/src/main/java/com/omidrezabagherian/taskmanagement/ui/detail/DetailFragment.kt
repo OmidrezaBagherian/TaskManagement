@@ -7,9 +7,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.omidrezabagherian.taskmanagement.R
 import com.omidrezabagherian.taskmanagement.databinding.FragmentDetailBinding
+import com.omidrezabagherian.taskmanagement.domian.models.Task
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -18,6 +20,9 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private lateinit var binding: FragmentDetailBinding
     private val detailViewModel: DetailViewModel by viewModels()
+    private val navController by lazy {
+        findNavController()
+    }
     private val navArgs: DetailFragmentArgs by navArgs()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,9 +45,30 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                     binding.mtvTitle.text = data.title
                     binding.mtvStatus.text = data.taskStatus.name
                     binding.mtvDescription.text = data.description
+                    btnDeleteTask(data)
+                    btnUpdateTask(data)
                 }
             }
         }
     }
 
+    private fun navigateToMain(){
+        navController.navigate(DetailFragmentDirections.actionDetailFragmentToMainFragment())
+    }
+
+    private fun navigationToEdit(task: Task){
+        navController.navigate(DetailFragmentDirections.actionDetailFragmentToUpdateFragment(task))
+    }
+
+    private fun btnUpdateTask(task: Task){
+        binding.mbtnEdit.setOnClickListener {
+            navigationToEdit(task)
+        }
+    }
+    private fun btnDeleteTask(task: Task) {
+        binding.mbtnRemove.setOnClickListener {
+            detailViewModel.deleteTask(task)
+            navigateToMain()
+        }
+    }
 }

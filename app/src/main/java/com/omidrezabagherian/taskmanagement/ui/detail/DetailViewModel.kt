@@ -27,4 +27,9 @@ class DetailViewModel @Inject constructor(private val repository: TaskManagement
         }
     }
 
+    fun deleteTask(task: Task) {
+        viewModelScope.launch {
+            repository.deleteTask(task)
+        }
+    }
 }
