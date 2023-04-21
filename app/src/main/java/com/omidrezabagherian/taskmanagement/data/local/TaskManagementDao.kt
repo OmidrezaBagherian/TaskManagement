@@ -13,7 +13,7 @@ interface TaskManagementDao {
     @Query("SELECT * FROM task_db")
     fun getAllTask(): Flow<List<Task>>
 
-    @Query("SELECT * FROM task_db WHERE statusTask == :statusTask")
+    @Query("SELECT * FROM task_db WHERE taskStatus == :taskStatus")
     fun getTaskByStatus(taskStatus: TaskStatus): Flow<List<Task>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
