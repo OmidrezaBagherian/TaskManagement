@@ -45,48 +45,67 @@ android {
 
 dependencies {
     //Navigation components
-    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
-    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
-    implementation "androidx.navigation:navigation-dynamic-features-fragment:$rootProject.navigationVersion"
-    implementation "androidx.navigation:navigation-runtime-ktx:$rootProject.navigationVersion"
+    def navigationVersion = "2.5.3"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion"
+    implementation "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
 
     //Activity components components + Fragment components
-    implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
-    implementation "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
-    implementation "androidx.legacy:legacy-support-v4:$rootProject.legacyVersion"
-    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerviewVersion"
+    def activityVersion = '1.7.0'
+    implementation "androidx.activity:activity-ktx:$activityVersion"
+    def fragmentVersion = '1.5.6'
+    implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
+    def legacyVersion = '1.0.0'
+    implementation "androidx.legacy:legacy-support-v4:$legacyVersion"
+    def recyclerviewVersion = '1.3.0'
+    implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
 
     // Room components
-    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
-    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
-    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
+    def roomVersion = '2.5.1'
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
 
     // Lifecycle components
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$rootProject.lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.lifecycleVersion"
+    def lifecycleVersion = '2.6.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
 
     // Kotlin-Coroutines components
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+    def coroutinesVersion = '1.6.4'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
 
     //Lottie components
-    implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
+    def lottieVersion = '5.2.0'
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 
     //Hilt components
-    implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
-    implementation "androidx.hilt:hilt-navigation-fragment:$rootProject.hiltNavigationVersion"
-    kapt "com.google.dagger:hilt-compiler:$rootProject.hiltVersion"
-    kapt "androidx.hilt:hilt-compiler:$rootProject.hiltCompilerVersion"
+    def hiltVersion = '2.44'
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+    def hiltNavigationVersion = '1.0.0'
+    implementation "androidx.hilt:hilt-navigation-fragment:$hiltNavigationVersion"
+    def hiltCompilerVersion = '1.0.0'
+    kapt "androidx.hilt:hilt-compiler:$hiltCompilerVersion"
 
     //Base components
-    implementation "androidx.core:core-ktx:$rootProject.coreVersion"
-    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
-    implementation "com.google.android.material:material:$rootProject.materialVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
-    testImplementation "junit:junit:$rootProject.junitVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
-    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
+    def coreVersion = "1.10.0"
+    implementation "androidx.core:core-ktx:$coreVersion"
+    def appCompatVersion = '1.6.1'
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    def materialVersion = '1.8.0'
+    implementation "com.google.android.material:material:$materialVersion"
+    def constraintLayoutVersion = '2.1.4'
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    def junitVersion = '4.13.2'
+    testImplementation "junit:junit:$junitVersion"
+    def espressoVersion = '3.5.1'
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    def androidxJunitVersion = '1.1.5'
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
 }
