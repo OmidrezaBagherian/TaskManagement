@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.main.MainFragment"
-        android:label="MainFragment"
+        android:label="@string/text_label_main_fragment"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_insertFragment"
@@ -17,22 +17,22 @@
     <fragment
         android:id="@+id/taskFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.task.TaskFragment"
-        android:label="TaskFragment"
+        android:label="@string/text_label_task_fragment"
         tools:layout="@layout/fragment_task" />
     <fragment
         android:id="@+id/doingFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.doing.DoingFragment"
-        android:label="DoingFragment"
+        android:label="@string/text_label_doing_fragment"
         tools:layout="@layout/fragment_doing" />
     <fragment
         android:id="@+id/doneFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.done.DoneFragment"
-        android:label="DoneFragment"
+        android:label="@string/text_label_done_fragment"
         tools:layout="@layout/fragment_done" />
     <fragment
         android:id="@+id/insertFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.insert.InsertFragment"
-        android:label="InsertFragment"
+        android:label="@string/text_label_insert_fragment"
         tools:layout="@layout/fragment_insert">
         <action
             android:id="@+id/action_insertFragment_to_mainFragment"
@@ -42,7 +42,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.detail.DetailFragment"
-        android:label="DetailFragment"
+        android:label="@string/text_label_update_fragment"
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="task"
@@ -62,7 +62,7 @@
         tools:layout="@layout/fragment_update"
         android:id="@+id/updateFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.update.UpdateFragment"
-        android:label="UpdateFragment" >
+        android:label="@string/text_label_update_fragment" >
         <action
             android:id="@+id/action_updateFragment_to_mainFragment"
             app:destination="@id/mainFragment"

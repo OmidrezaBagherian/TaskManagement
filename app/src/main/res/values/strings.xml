@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">TaskManagement</string>
+    <string name="app_name">مدیریت کارا</string>
+
+    <string name="text_label_main_fragment">صفحه اصلی</string>
+    <string name="text_label_task_fragment">کارها</string>
+    <string name="text_label_doing_fragment">در حال انجام</string>
+    <string name="text_label_done_fragment">تمام شده</string>
+    <string name="text_label_insert_fragment">افزودن کار</string>
+    <string name="text_label_update_fragment">ویرایش کار</string>
+
 </resources>
