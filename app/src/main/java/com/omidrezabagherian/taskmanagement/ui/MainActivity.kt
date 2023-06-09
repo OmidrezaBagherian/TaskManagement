@@ -2,6 +2,8 @@ package com.omidrezabagherian.taskmanagement.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -18,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
-    private lateinit var appBarConfiguration:AppBarConfiguration
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,13 +28,43 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        setupUI()
+    }
 
+    private fun setupUI() {
+        setupToolbar()
+        setupNavigationComponent()
+    }
+
+    private fun setupNavigationComponent() {
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    private fun setupToolbar() {
+        setSupportActionBar(binding.toolbar)
+
+        binding.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_setting -> {
+                    Toast.makeText(this, "1", Toast.LENGTH_SHORT).show()
+                }
+
+                R.id.menu_about -> {
+                    Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            false
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_app, menu)
+        return true
     }
 
     override fun onSupportNavigateUp(): Boolean {
