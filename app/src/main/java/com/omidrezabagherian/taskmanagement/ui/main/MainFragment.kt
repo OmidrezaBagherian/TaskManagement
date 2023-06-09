@@ -20,6 +20,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private val navController by lazy {
         findNavController()
     }
+    private val tabs = arrayListOf(
+        requireContext().getString(R.string.text_label_task_fragment),
+        requireContext().getString(R.string.text_label_doing_fragment),
+        requireContext().getString(R.string.text_label_done_fragment)
+    )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,7 +45,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         binding.vpStatus.adapter = adapter
 
         TabLayoutMediator(binding.tlStatus, binding.vpStatus) { tab, position ->
-            tab.text = ConstValues.TAB_EN[position]
+            tab.text = tabs[position]
         }.attach()
     }
 
