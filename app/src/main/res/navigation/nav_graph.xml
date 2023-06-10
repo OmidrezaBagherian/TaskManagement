@@ -42,7 +42,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.detail.DetailFragment"
-        android:label="@string/text_label_update_fragment"
+        android:label="@string/text_label_detail_fragment"
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="task"

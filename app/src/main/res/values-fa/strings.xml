@@ -5,6 +5,24 @@
     <string name="text_label_task_fragment">کارها</string>
     <string name="text_label_doing_fragment">در حال انجام</string>
     <string name="text_label_done_fragment">تمام شده</string>
+    <string name="text_label_detail_fragment">جزئیات</string>
     <string name="text_label_insert_fragment">افزودن کار</string>
     <string name="text_label_update_fragment">ویرایش کار</string>
+    <string-array name="text_tabs">
+        <item>کارها</item>
+        <item>در حال انجام</item>
+        <item>اتمام رسیده</item>
+    </string-array>
+    <string name="text_edittext_insert_title">عنوان تسک</string>
+    <string name="text_radiobutton_insert_task">کارها</string>
+    <string name="text_radiobutton_insert_doing">در حال انجام</string>
+    <string name="text_radiobutton_insert_done">تمام شده</string>
+    <string name="text_edittext_insert_description">توضیحات</string>
+    <string name="text_button_insert_task">افزودن کار</string>
+    <string name="text_edittext_update_title">عنوان تسک</string>
+    <string name="text_radiobutton_update_task">کارها</string>
+    <string name="text_radiobutton_update_doing">در حال انجام</string>
+    <string name="text_radiobutton_update_done">تمام شده</string>
+    <string name="text_edittext_update_description">توضیحات</string>
+    <string name="text_button_update_task">ویرایش کار</string>
 </resources>

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:hint="Title"
+        android:hint="@string/text_edittext_insert_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,7 +28,6 @@
         android:layout_margin="8dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:tooltipText="Status"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tilTitle">
@@ -38,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Task" />
+            android:text="@string/text_radiobutton_insert_task" />
 
         <RadioButton
             android:id="@+id/rbDoing"
@@ -46,14 +45,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Doing" />
+            android:text="@string/text_radiobutton_insert_doing" />
 
         <RadioButton
             android:id="@+id/rbDone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Done" />
+            android:text="@string/text_radiobutton_insert_done" />
 
     </RadioGroup>
 
@@ -62,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        android:hint="Description"
+        android:hint="@string/text_edittext_insert_description"
         app:layout_constraintBottom_toTopOf="@id/mbtnInsert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +79,7 @@
         android:id="@+id/mbtnInsert"
         android:layout_width="match_parent"
         android:layout_margin="8dp"
-        android:text="Insert Task"
+        android:text="@string/text_button_insert_task"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
