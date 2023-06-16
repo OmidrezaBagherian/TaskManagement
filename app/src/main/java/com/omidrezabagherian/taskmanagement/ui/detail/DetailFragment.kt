@@ -1,7 +1,12 @@
 package com.omidrezabagherian.taskmanagement.ui.detail
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -24,6 +29,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         findNavController()
     }
     private val navArgs: DetailFragmentArgs by navArgs()
+    private lateinit var task: Task
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -35,6 +41,32 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private fun setupUI() {
         bindDataToUI(navArgs.task.id)
+        setupMenu()
+    }
+
+    private fun setupMenu() {
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_detail, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.menu_update -> {
+                        manageUpdateTask(task)
+                        true
+                    }
+
+                    R.id.menu_remove -> {
+                        manageDeleteTask(task)
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     private fun bindDataToUI(id: Int) {
@@ -45,8 +77,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                     binding.mtvTitle.text = data.title
                     binding.mtvStatus.text = data.taskStatus.name
                     binding.mtvDescription.text = data.description
-                    btnDeleteTask(data)
-                    btnUpdateTask(data)
+                    task = data
                 }
             }
         }
@@ -60,15 +91,11 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         navController.navigate(DetailFragmentDirections.actionDetailFragmentToUpdateFragment(task))
     }
 
-    private fun btnUpdateTask(task: Task){
-        binding.mbtnEdit.setOnClickListener {
-            navigationToEdit(task)
-        }
+    private fun manageUpdateTask(task: Task){
+        navigationToEdit(task)
     }
-    private fun btnDeleteTask(task: Task) {
-        binding.mbtnRemove.setOnClickListener {
-            detailViewModel.deleteTask(task)
-            navigateToMain()
-        }
+    private fun manageDeleteTask(task: Task) {
+        detailViewModel.deleteTask(task)
+        navigateToMain()
     }
 }
