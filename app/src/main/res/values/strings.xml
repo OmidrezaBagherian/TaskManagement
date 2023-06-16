@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Kara management</string>
+
     <string name="text_label_main_fragment">Kara management</string>
     <string name="text_label_task_fragment">Tasks</string>
     <string name="text_label_doing_fragment">Doing</string>
@@ -7,17 +8,26 @@
     <string name="text_label_detail_fragment">Detail</string>
     <string name="text_label_insert_fragment">Add Task</string>
     <string name="text_label_update_fragment">Edit Task</string>
+
+    <string name="text_menu_main_setting">Setting</string>
+    <string name="text_menu_main_about">About Me</string>
+
+    <string name="text_menu_detail_update">Edit</string>
+    <string name="text_menu_detail_remove">Remove</string>
+
     <string-array name="text_tabs">
         <item>Tasks</item>
         <item>Doing</item>
         <item>Done</item>
     </string-array>
+
     <string name="text_edittext_insert_title">Title Tasks</string>
     <string name="text_radiobutton_insert_task">Task</string>
     <string name="text_radiobutton_insert_doing">Doing</string>
     <string name="text_radiobutton_insert_done">Done</string>
     <string name="text_edittext_insert_description">Description</string>
     <string name="text_button_insert_task">Insert Task</string>
+
     <string name="text_edittext_update_title">Title Tasks</string>
     <string name="text_radiobutton_update_task">Task</string>
     <string name="text_radiobutton_update_doing">Doing</string>
