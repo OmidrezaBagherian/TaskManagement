@@ -46,25 +46,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupToolbar() {
         setSupportActionBar(binding.toolbar)
-
-        binding.toolbar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.menu_setting -> {
-                    Toast.makeText(this, "1", Toast.LENGTH_SHORT).show()
-                }
-
-                R.id.menu_about -> {
-                    Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            false
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_app, menu)
-        return true
     }
 
     override fun onSupportNavigateUp(): Boolean {
