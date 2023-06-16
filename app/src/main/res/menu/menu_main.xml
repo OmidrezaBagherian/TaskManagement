@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_setting"
-        android:title="تنظیمات" />
+        android:title="@string/text_menu_main_setting" />
 
     <item
         android:id="@+id/menu_about"
-        android:title="درباره من" />
+        android:title="@string/text_menu_main_about" />
 </menu>
