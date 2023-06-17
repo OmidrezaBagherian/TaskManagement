@@ -22,9 +22,12 @@
     </string-array>
 
     <string name="text_edittext_insert_title">Title Tasks</string>
-    <string name="text_radiobutton_insert_task">Task</string>
-    <string name="text_radiobutton_insert_doing">Doing</string>
-    <string name="text_radiobutton_insert_done">Done</string>
+    <string name="text_edittext_insert_status">Status Tasks</string>
+    <string-array name="text_insert_status">
+        <item>Tasks</item>
+        <item>Doing</item>
+        <item>Done</item>
+    </string-array>
     <string name="text_edittext_insert_description">Description</string>
     <string name="text_button_insert_task">Insert Task</string>
 

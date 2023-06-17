@@ -23,9 +23,12 @@
     </string-array>
 
     <string name="text_edittext_insert_title">عنوان تسک</string>
-    <string name="text_radiobutton_insert_task">کارها</string>
-    <string name="text_radiobutton_insert_doing">در حال انجام</string>
-    <string name="text_radiobutton_insert_done">تمام شده</string>
+    <string name="text_edittext_insert_status">وضعیت تسک</string>
+    <string-array name="text_insert_status">
+        <item>کارها</item>
+        <item>در حال انجام</item>
+        <item>تمام شده</item>
+    </string-array>
     <string name="text_edittext_insert_description">توضیحات</string>
     <string name="text_button_insert_task">افزودن کار</string>
 
