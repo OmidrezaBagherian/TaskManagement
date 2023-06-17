@@ -10,6 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="@string/text_edittext_insert_title"
+        app:counterEnabled="true"
+        app:counterMaxLength="32"
+        app:startIconDrawable="@drawable/round_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,7 +24,26 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <RadioGroup
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilStatus"
+        app:startIconDrawable="@drawable/round_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="@string/text_edittext_insert_status"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilTitle">
+
+        <AutoCompleteTextView
+            android:id="@+id/actvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <!--<RadioGroup
         android:id="@+id/rgStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +76,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/text_radiobutton_insert_done" />
 
-    </RadioGroup>
+    </RadioGroup>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilDescription"
@@ -62,25 +84,31 @@
         android:layout_height="0dp"
         android:layout_margin="8dp"
         android:hint="@string/text_edittext_insert_description"
+        android:layout_gravity="top|start"
         app:layout_constraintBottom_toTopOf="@id/mbtnInsert"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rgStatus">
+        app:layout_constraintTop_toBottomOf="@id/tilStatus">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiedDescription"
-            android:layout_width="match_parent"
+            android:gravity="top|start"
             android:inputType="textMultiLine"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:lines="20"
+            android:minLines="5"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false"  />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mbtnInsert"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="@string/text_button_insert_task"
-        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
