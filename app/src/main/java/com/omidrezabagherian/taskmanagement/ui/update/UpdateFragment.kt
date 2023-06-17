@@ -57,7 +57,7 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
     private fun bindDataToUI() {
         binding.tiedTitle.setText(navArgs.task.title)
         isCheckedStatus()
-        binding.tiedDescription.setText(navArgs.task.title)
+        binding.tiedDescription.setText(navArgs.task.description)
     }
 
     private fun getStatus(): TaskStatus =
