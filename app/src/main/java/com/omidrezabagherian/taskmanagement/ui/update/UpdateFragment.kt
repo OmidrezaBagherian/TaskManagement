@@ -2,6 +2,7 @@ package com.omidrezabagherian.taskmanagement.ui.update
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -35,21 +36,36 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
     private fun setupUI() {
         bindDataToUI()
         setupBtnUpdate()
+        setAdapterAutoComplete()
+    }
+
+    private fun setAdapterAutoComplete() {
+        val status = resources.getStringArray(R.array.text_insert_status)
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.select_dialog_item, status)
+        binding.actvStatus.setAdapter(adapter)
     }
 
     private fun isCheckedStatus(){
+        val status:Array<String> = resources.getStringArray(R.array.text_insert_status)
+
         when(navArgs.task.taskStatus){
             TaskStatus.TASK->{
-                binding.rbTask.isChecked = true
+                binding.actvStatus.setText(status[0])
             }
             TaskStatus.DOING->{
-                binding.rbDoing.isChecked = true
+                binding.actvStatus.setText(status[1])
             }
             TaskStatus.DONE->{
-                binding.rbDone.isChecked = true
+                binding.actvStatus.setText(status[2])
             }
             else -> {
-                binding.rbTask.isChecked = true
+                Snackbar.make(
+                    requireView(),
+                    "Your task status could not be loaded.",
+                    Snackbar.LENGTH_SHORT
+                ).setAction("OK") {
+                    isHidden
+                }.show()
             }
         }
     }
@@ -60,21 +76,26 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
         binding.tiedDescription.setText(navArgs.task.description)
     }
 
-    private fun getStatus(): TaskStatus =
-        when (binding.rgStatus.checkedRadioButtonId) {
-            R.id.rbTask -> {
+    private fun getStatus(): TaskStatus {
+        val status:Array<String> = resources.getStringArray(R.array.text_insert_status)
+        return when (binding.actvStatus.text.toString()) {
+            status[0] -> {
                 TaskStatus.TASK
             }
-            R.id.rbDoing -> {
+
+            status[1] -> {
                 TaskStatus.DOING
             }
-            R.id.rbDone -> {
+
+            status[2] -> {
                 TaskStatus.DONE
             }
+
             else -> {
                 TaskStatus.NONE
             }
         }
+    }
 
     private fun insertTaskToDatabase(task: Task) {
         insertViewModel.updateTask(task)
