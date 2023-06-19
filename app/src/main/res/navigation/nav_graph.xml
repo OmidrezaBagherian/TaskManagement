@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_insertFragment"
             app:destination="@id/insertFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_aboutMeFragment"
+            app:destination="@id/aboutMeFragment" />
     </fragment>
     <fragment
         android:id="@+id/taskFragment"
@@ -71,4 +74,9 @@
             android:name="task"
             app:argType="com.omidrezabagherian.taskmanagement.domian.models.Task" />
     </fragment>
+    <fragment
+        tools:layout="@layout/fragment_about_me"
+        android:id="@+id/aboutMeFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.about.AboutMeFragment"
+        android:label="AboutMeFragment" />
 </navigation>

@@ -46,6 +46,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         setupMenu()
     }
 
+    private fun navigateToAboutMe(){
+        navController.navigate(MainFragmentDirections.actionMainFragmentToAboutMeFragment())
+    }
+
     private fun setupMenu() {
         val menuHost = requireActivity()
         menuHost.addMenuProvider(object : MenuProvider {
@@ -61,7 +65,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     }
 
                     R.id.menu_about -> {
-                        Toast.makeText(requireContext(), "About", Toast.LENGTH_SHORT).show()
+                        navigateToAboutMe()
                         true
                     }
 
@@ -89,7 +93,4 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_app, menu)
-    }*/
 }
