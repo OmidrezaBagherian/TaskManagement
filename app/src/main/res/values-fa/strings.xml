@@ -38,4 +38,14 @@
     <string name="text_radiobutton_update_done">تمام شده</string>
     <string name="text_edittext_update_description">توضیحات</string>
     <string name="text_button_update_task">ویرایش کار</string>
+
+    <string name="text_toast_task_loaded">وضعیت تسک شما بارگیری نشد</string>
+    <string name="text_toast_title_empty">عنوان تسک خالی میباشد</string>
+    <string name="text_toast_task_not_selected">وضعیت تسک انتخاب نشده است</string>
+    <string name="text_toast_okey">تایید</string>
+
+    <string name="text_textview_name_title">نام کامل: </string>
+    <string name="text_textview_name">امیدرضا باقریان اسفندانی</string>
+    <string name="text_textview_email_title">ایمیل: </string>
+
 </resources>

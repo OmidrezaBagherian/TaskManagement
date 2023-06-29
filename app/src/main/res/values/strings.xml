@@ -37,4 +37,14 @@
     <string name="text_radiobutton_update_done">Done</string>
     <string name="text_edittext_update_description">Description</string>
     <string name="text_button_update_task">Edit Task</string>
+
+    <string name="text_toast_task_loaded">Your task status could not be loaded</string>
+    <string name="text_toast_title_empty">Title is empty</string>
+    <string name="text_toast_task_not_selected">Task status not selected</string>
+    <string name="text_toast_okey">Okey</string>
+
+    <string name="text_textview_name_title">FullName: </string>
+    <string name="text_textview_name">Omidreza Bagherian Esfandani</string>
+    <string name="text_textview_email_title">Email: </string>
+    <string name="text_textview_email" translatable="false">OmidrezaBagheriyan@Yahoo.com</string>
 </resources>
