@@ -12,7 +12,6 @@ import com.omidrezabagherian.taskmanagement.R
 import com.omidrezabagherian.taskmanagement.databinding.FragmentUpdateBinding
 import com.omidrezabagherian.taskmanagement.domian.models.Task
 import com.omidrezabagherian.taskmanagement.domian.models.TaskStatus
-import com.omidrezabagherian.taskmanagement.ui.insert.InsertFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,25 +44,28 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
         binding.actvStatus.setAdapter(adapter)
     }
 
-    private fun isCheckedStatus(){
-        val status:Array<String> = resources.getStringArray(R.array.text_insert_status)
+    private fun isCheckedStatus() {
+        val status: Array<String> = resources.getStringArray(R.array.text_insert_status)
 
-        when(navArgs.task.taskStatus){
-            TaskStatus.TASK->{
+        when (navArgs.task.taskStatus) {
+            TaskStatus.TASK -> {
                 binding.actvStatus.setText(status[0])
             }
-            TaskStatus.DOING->{
+
+            TaskStatus.DOING -> {
                 binding.actvStatus.setText(status[1])
             }
-            TaskStatus.DONE->{
+
+            TaskStatus.DONE -> {
                 binding.actvStatus.setText(status[2])
             }
+
             else -> {
                 Snackbar.make(
                     requireView(),
-                    "Your task status could not be loaded.",
+                    getString(R.string.text_toast_task_loaded),
                     Snackbar.LENGTH_SHORT
-                ).setAction("OK") {
+                ).setAction(getString(R.string.text_toast_okey)) {
                     isHidden
                 }.show()
             }
@@ -77,7 +79,7 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
     }
 
     private fun getStatus(): TaskStatus {
-        val status:Array<String> = resources.getStringArray(R.array.text_insert_status)
+        val status: Array<String> = resources.getStringArray(R.array.text_insert_status)
         return when (binding.actvStatus.text.toString()) {
             status[0] -> {
                 TaskStatus.TASK
@@ -105,9 +107,9 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
         if (binding.tiedTitle.text!!.isEmpty()) {
             Snackbar.make(
                 requireView(),
-                "Title is empty.",
+                getString(R.string.text_toast_title_empty),
                 Snackbar.LENGTH_SHORT
-            ).setAction("OK") {
+            ).setAction(getString(R.string.text_toast_okey)) {
                 isHidden
             }.show()
             return
@@ -116,9 +118,9 @@ class UpdateFragment : Fragment(R.layout.fragment_update) {
         if (getStatus() == TaskStatus.NONE) {
             Snackbar.make(
                 requireView(),
-                "Task status not selected.",
+                getString(R.string.text_toast_task_not_selected),
                 Snackbar.LENGTH_SHORT
-            ).setAction("OK") {
+            ).setAction(getString(R.string.text_toast_okey)) {
                 isHidden
             }.show()
             return

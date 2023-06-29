@@ -70,9 +70,9 @@ class InsertFragment : Fragment(R.layout.fragment_insert) {
         if (binding.tiedTitle.text!!.isEmpty()) {
             Snackbar.make(
                 requireView(),
-                "Title is empty.",
+                getString(R.string.text_toast_title_empty),
                 Snackbar.LENGTH_SHORT
-            ).setAction("OK") {
+            ).setAction(getString(R.string.text_toast_okey)) {
                 isHidden
             }.show()
             return
@@ -81,9 +81,9 @@ class InsertFragment : Fragment(R.layout.fragment_insert) {
         if (getStatus() == TaskStatus.NONE) {
             Snackbar.make(
                 requireView(),
-                "Task status not selected.",
+                getString(R.string.text_toast_task_not_selected),
                 Snackbar.LENGTH_SHORT
-            ).setAction("OK") {
+            ).setAction(getString(R.string.text_toast_okey)) {
                 isHidden
             }.show()
             return
