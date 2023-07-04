@@ -1,9 +1,12 @@
 package com.omidrezabagherian.taskmanagement.ui
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -11,6 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.omidrezabagherian.taskmanagement.R
+import com.omidrezabagherian.taskmanagement.data.datastore.Theme
 import com.omidrezabagherian.taskmanagement.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +37,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
+        checkTheme()
         setupToolbar()
         setupNavigationComponent()
+    }
+
+    private fun defaultTheme() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+    }
+
+    private fun dayTheme() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+    }
+
+    private fun nightTheme() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+    }
+
+    private fun checkTheme() {
+        viewModel.getTheme().observe(this@MainActivity) { theme ->
+            when (theme) {
+                Theme.DEFAULT.name -> defaultTheme()
+                Theme.LIGHT.name -> dayTheme()
+                Theme.NIGHT.name -> nightTheme()
+            }
+        }
     }
 
     private fun setupNavigationComponent() {
