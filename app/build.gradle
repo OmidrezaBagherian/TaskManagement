@@ -46,6 +46,9 @@ android {
 }
 
 dependencies {
+    //DataStore components
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
     //Navigation components
     def navigationVersion = "2.5.3"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
