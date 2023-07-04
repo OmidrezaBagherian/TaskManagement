@@ -21,7 +21,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainFragment : Fragment(R.layout.fragment_main) {
 
     private lateinit var binding: FragmentMainBinding
-    private val mainViewModel: MainViewModel by viewModels()
     private val navController by lazy {
         findNavController()
     }
@@ -45,6 +44,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         setupMenu()
     }
 
+    private fun navigateToSetting(){
+        navController.navigate(MainFragmentDirections.actionMainFragmentToSettingFragment())
+    }
+
     private fun navigateToAboutMe(){
         navController.navigate(MainFragmentDirections.actionMainFragmentToAboutMeFragment())
     }
@@ -59,7 +62,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.menu_setting -> {
-                        Toast.makeText(requireContext(), "Setting", Toast.LENGTH_SHORT).show()
+                        navigateToSetting()
                         true
                     }
 
@@ -76,7 +79,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun setupTabLayout() {
-        val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager, lifecycle)
+        val adapter = ViewPagerAdapter(childFragmentManager, lifecycle)
         binding.vpStatus.adapter = adapter
 
         val tabs = resources.getStringArray(R.array.text_tabs)
