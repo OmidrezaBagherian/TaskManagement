@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace 'com.omidrezabagherian.taskmanagement'
+    namespace 'com.omidrezabagherian.karaapplication'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.omidrezabagherian.taskmanagement"
+        applicationId "com.omidrezabagherian.karaapplication"
         minSdk 23
         targetSdk 33
         versionCode 1

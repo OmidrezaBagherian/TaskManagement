@@ -1,0 +1,26 @@
+package com.omidrezabagherian.karaapplication.ui
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.omidrezabagherian.karaapplication.ui.doing.DoingFragment
+import com.omidrezabagherian.karaapplication.ui.done.DoneFragment
+import com.omidrezabagherian.karaapplication.ui.task.TaskFragment
+import com.omidrezabagherian.karaapplication.util.ConstValues
+
+class ViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+    FragmentStateAdapter(fragmentManager, lifecycle) {
+
+    override fun getItemCount(): Int = ConstValues.NUM_TABS
+
+    override fun createFragment(position: Int): Fragment {
+        return when (position) {
+            0 -> TaskFragment()
+            1 -> DoingFragment()
+            2 -> DoneFragment()
+            else -> TaskFragment()
+        }
+    }
+
+}
