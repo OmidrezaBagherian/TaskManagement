@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">کارا (مدیریت وظیفه)</string>
+    <string name="app_name">کارا (مدیریت وظایف)</string>
 
     <string name="text_label_main_fragment">کارا</string>
     <string name="text_label_task_fragment">کارها</string>

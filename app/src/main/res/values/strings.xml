@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kara (Task management)</string>
+    <string name="app_name">Kara (Tasks Management)</string>
 
     <string name="text_label_main_fragment">Kara</string>
     <string name="text_label_task_fragment">Tasks</string>
