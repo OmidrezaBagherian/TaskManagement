@@ -8,6 +8,8 @@
     <string name="text_label_detail_fragment">Detail</string>
     <string name="text_label_insert_fragment">Add Task</string>
     <string name="text_label_update_fragment">Edit Task</string>
+    <string name="text_label_aboutme_fragment">About me</string>
+    <string name="text_label_setting_fragment">Setting</string>
 
     <string name="text_menu_main_setting">Setting</string>
     <string name="text_menu_main_about">About Me</string>
@@ -47,4 +49,8 @@
     <string name="text_textview_name">Omidreza Bagherian Esfandani</string>
     <string name="text_textview_email_title">Email: </string>
     <string name="text_textview_email" translatable="false">OmidrezaBagheriyan@Yahoo.com</string>
+
+    <string name="text_default_mode">Default</string>
+    <string name="text_day_mode">Day</string>
+    <string name="text_night_mode">Night</string>
 </resources>

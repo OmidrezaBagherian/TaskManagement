@@ -9,6 +9,8 @@
     <string name="text_label_detail_fragment">جزئیات</string>
     <string name="text_label_insert_fragment">افزودن کار</string>
     <string name="text_label_update_fragment">ویرایش کار</string>
+    <string name="text_label_aboutme_fragment">درباره من</string>
+    <string name="text_label_setting_fragment">تنظیمات</string>
 
     <string name="text_menu_main_setting">تنظیمات</string>
     <string name="text_menu_main_about">درباره من</string>
@@ -48,4 +50,7 @@
     <string name="text_textview_name">امیدرضا باقریان اسفندانی</string>
     <string name="text_textview_email_title">ایمیل: </string>
 
+    <string name="text_default_mode">پیشفرض</string>
+    <string name="text_day_mode">صبح</string>
+    <string name="text_night_mode">شب</string>
 </resources>
