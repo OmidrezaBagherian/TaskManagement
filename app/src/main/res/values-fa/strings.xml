@@ -10,9 +10,9 @@
     <string name="text_label_insert_fragment">افزودن کار</string>
     <string name="text_label_update_fragment">ویرایش کار</string>
     <string name="text_label_aboutme_fragment">درباره من</string>
-    <string name="text_label_setting_fragment">تنظیمات</string>
+    <string name="text_label_setting_fragment">تم برنامه</string>
 
-    <string name="text_menu_main_setting">تنظیمات</string>
+    <string name="text_menu_main_setting">تم برنامه</string>
     <string name="text_menu_main_about">درباره من</string>
 
     <string name="text_menu_detail_update">ویرایش</string>

@@ -80,11 +80,11 @@
     <fragment
         android:id="@+id/aboutMeFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.about.AboutMeFragment"
-        android:label="AboutMeFragment"
+        android:label="@string/text_menu_main_about"
         tools:layout="@layout/fragment_about_me" />
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.setting.SettingFragment"
-        android:label="SettingFragment"
+        android:label="@string/text_menu_main_setting"
         tools:layout="@layout/fragment_setting" />
 </navigation>

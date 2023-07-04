@@ -9,9 +9,9 @@
     <string name="text_label_insert_fragment">Add Task</string>
     <string name="text_label_update_fragment">Edit Task</string>
     <string name="text_label_aboutme_fragment">About me</string>
-    <string name="text_label_setting_fragment">Setting</string>
+    <string name="text_label_setting_fragment">Theme</string>
 
-    <string name="text_menu_main_setting">Setting</string>
+    <string name="text_menu_main_setting">Theme</string>
     <string name="text_menu_main_about">About Me</string>
 
     <string name="text_menu_detail_update">Edit</string>
