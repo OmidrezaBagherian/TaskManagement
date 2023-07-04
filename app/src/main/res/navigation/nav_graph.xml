@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_aboutMeFragment"
             app:destination="@id/aboutMeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
     </fragment>
     <fragment
         android:id="@+id/taskFragment"
@@ -46,7 +49,7 @@
         android:id="@+id/detailFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.detail.DetailFragment"
         android:label="@string/text_label_detail_fragment"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_detail">
         <argument
             android:name="task"
             app:argType="com.omidrezabagherian.taskmanagement.domian.models.Task" />
@@ -62,10 +65,10 @@
         android:id="@+id/action_global_detailFragment"
         app:destination="@id/detailFragment" />
     <fragment
-        tools:layout="@layout/fragment_update"
         android:id="@+id/updateFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.update.UpdateFragment"
-        android:label="@string/text_label_update_fragment" >
+        android:label="@string/text_label_update_fragment"
+        tools:layout="@layout/fragment_update">
         <action
             android:id="@+id/action_updateFragment_to_mainFragment"
             app:destination="@id/mainFragment"
@@ -75,8 +78,13 @@
             app:argType="com.omidrezabagherian.taskmanagement.domian.models.Task" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_about_me"
         android:id="@+id/aboutMeFragment"
         android:name="com.omidrezabagherian.taskmanagement.ui.about.AboutMeFragment"
-        android:label="AboutMeFragment" />
+        android:label="AboutMeFragment"
+        tools:layout="@layout/fragment_about_me" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.omidrezabagherian.taskmanagement.ui.setting.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting" />
 </navigation>
